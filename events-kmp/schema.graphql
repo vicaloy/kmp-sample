@@ -1,0 +1,33 @@
+# This file was generated. Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Mutation {
+    addUser(user: UserDTOInput!): Boolean!
+    deleteUser(user: UserDTOInput!): Boolean!
+    upsertUser(user: UserDTOInput!): Boolean!
+}
+
+type Query {
+    filterUsers(email: String, name: String): [UserDTO!]!
+    findUser(id: Int!): UserDTO
+    getAllUsers: [UserDTO!]!
+}
+
+"Some type description"
+type UserDTO {
+    email: String!
+    id: Int!
+    lastname: String! @deprecated(reason: "will be removed in future versions")
+    name: String!
+}
+
+"Some type description"
+input UserDTOInput {
+    email: String!
+    id: Int!
+    name: String!
+}

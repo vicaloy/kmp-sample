@@ -1,0 +1,16 @@
+# Declaration of named fragment
+fragment userFragment on UserDTO {
+    id
+    name
+    lastname
+    email
+}
+
+query getAllUsers {
+    getAllUsers {
+        id
+        name
+        lastname
+        email
+    }
+}
